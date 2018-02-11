@@ -1,0 +1,81 @@
+<<html>
+<div id="background" style="background-image: url('1.jpg');background-size: cover;opacity:0.2;"></div>
+
+	<meta charset="utf-8">
+<link rel="stylesheet" type="text/css" href="hos.css"/>
+
+<meta name="description" content="Hospital Database"/>
+<link rel="canonical" href="/">
+	<title> Hospobase</title>
+	<style>
+	
+	</style>
+	
+	
+<body>
+<div id="homepage" >
+<ul class="k" >
+   <li class="n"><a href="homepage.html">Home</a></li>
+   <li class="n"><a href="contact.html">Contact</a></li>
+  <li class="n"><a href="about.html">About Us</a></li>
+</ul>
+<pre>
+
+</pre>
+	<h2 style="font-family:chiller;font-size:60px"> Hospital Database</h2>
+</div>
+  
+<pre>
+
+
+</pre>
+<h1>
+Thank You For Your Valuable Feedback!!!
+</h1>
+
+The Feedback given is:
+<?php 
+$con=mysqli_connect("localhost","root","","hospitaldb");
+// Check connection
+if (mysqli_connect_errno())
+  {
+  echo "Failed to connect to MySQL: " . mysqli_connect_error();
+  }
+
+$sql="select employee.fname,employee.lname from employee where employee.designation='Doctor' ";
+
+if ($result=mysqli_query($con,$sql))
+  {
+  // Fetch one and one row
+  while ($row=mysqli_fetch_row($result))
+    {
+    printf ("%s \n",$row);
+	break;
+    }
+  // Free result set
+  mysqli_free_result($result);
+}
+
+mysqli_close($con);
+?>
+<pre>
+
+
+
+</pre>
+<ul class="k1" >
+ <li style="float:left;font-weight:bolder;opacity:0.9;font-size:20px;">Follows Us On</li>
+  
+  
+  <li class="n1"><a href=""><img src ="facebook.svg" style=""/></a></li>
+  <li class="n1"><a href=""><img src ="twitter.svg"/> </a></li>
+  <li class="n1"><a href=""><img src ="instagram.svg"/> </a></li>
+  
+</ul>
+  
+
+  <p align="center" style="opacity:0.6;">&copy;2016 Tripism</p>    
+
+	</body>
+</html>
+
